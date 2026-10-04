@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Announcements - HR Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <script src="js/api.js"></script>
+<script>requireLogin();</script>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                HR Portal
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="employees.html">
+                    Employees
+                </a>
+
+                <a href="leaves.html">
+                    Leave Management
+                </a>
+
+                <a href="announcements.html" class="active">
+                    Announcements
+                </a>
+
+            </nav>
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div>
+
+                    <h1>Announcements</h1>
+
+                    <p>
+                        Manage company announcements
+                    </p>
+
+                </div>
+
+                <div class="admin-profile">
+                    Admin
+                </div>
+
+            </header>
+
+
+            <!-- Add Announcement -->
+
+            <section class="form-section">
+
+                <h2>Create Announcement</h2>
+
+                <form id="announcementForm">
+
+                    <div class="form-grid">
+
+                        <div>
+
+                            <label for="announcementTitle">
+                                Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="announcementTitle"
+                                placeholder="Enter announcement title"
+                                required>
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="announcementDate">
+                                Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="announcementDate"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reason-field">
+
+                        <label for="announcementMessage">
+                            Announcement
+                        </label>
+
+                        <textarea
+                            id="announcementMessage"
+                            placeholder="Write announcement..."
+                            rows="5"
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Publish Announcement
+
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- Announcements List -->
+
+            <section class="dashboard-section">
+
+                <h2>Published Announcements</h2>
+
+                <div id="announcementList">
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/announcements.js"></script>
+
+</body>
+
+</html>

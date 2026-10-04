@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leave Management - HR Portal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<script src="js/api.js"></script>
+<script>requireLogin();</script>
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                HR Portal
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="employees.html">
+                    Employees
+                </a>
+
+                <a href="leaves.html" class="active">
+                    Leave Management
+                </a>
+
+                <a href="announcements.html">
+                    Announcements
+                </a>
+
+            </nav>
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div>
+
+                    <h1>Leave Management</h1>
+
+                    <p>
+                        Manage employee leave requests
+                    </p>
+
+                </div>
+
+                <div class="admin-profile">
+                    Admin
+                </div>
+
+            </header>
+
+
+            <!-- Leave Form -->
+
+            <section class="form-section">
+
+                <h2>Apply for Leave</h2>
+
+                <form id="leaveForm">
+
+                    <div class="form-grid">
+
+                        <div>
+
+                            <label for="employeeName">
+                                Employee
+                            </label>
+
+                            <input
+                                type="text"
+                                id="employeeName"
+                                placeholder="Enter employee name"
+                                required>
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="leaveType">
+                                Leave Type
+                            </label>
+
+                            <select id="leaveType" required>
+
+                                <option value="">
+                                    Select Leave Type
+                                </option>
+
+                                <option value="Casual Leave">
+                                    Casual Leave
+                                </option>
+
+                                <option value="Sick Leave">
+                                    Sick Leave
+                                </option>
+
+                                <option value="Annual Leave">
+                                    Annual Leave
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="startDate">
+                                Start Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="startDate"
+                                required>
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="endDate">
+                                End Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="endDate"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reason-field">
+
+                        <label for="reason">
+                            Reason
+                        </label>
+
+                        <textarea
+                            id="reason"
+                            placeholder="Enter reason for leave"
+                            rows="4"
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+
+                        Submit Leave Request
+
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- Leave Requests -->
+
+            <section class="dashboard-section">
+
+                <div class="employee-header">
+
+                    <h2>Leave Requests</h2>
+
+                    <select id="statusFilter">
+
+                        <option value="All">
+                            All Requests
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Approved">
+                            Approved
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Employee</th>
+
+                                <th>Leave Type</th>
+
+                                <th>Start Date</th>
+
+                                <th>End Date</th>
+
+                                <th>Reason</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="leaveTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/leaves.js"></script>
+
+</body>
+
+</html>

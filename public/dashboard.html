@@ -1,0 +1,179 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HR Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <h1>HR Management Dashboard</h1>
+
+    <p>Welcome to the HR Management Portal.</p>
+
+</body>
+
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HR Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<script src="js/api.js"></script>
+<script>requireLogin();</script>
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                HR Portal
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html" class="active">
+                    Dashboard
+                </a>
+
+                <a href="employees.html">
+                    Employees
+                </a>
+
+                <a href="leaves.html">
+                    Leave Management
+                </a>
+
+                <a href="announcements.html">
+                    Announcements
+                </a>
+
+            </nav>
+
+            <button id="logoutButton" class="logout-button">
+                Logout
+            </button>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <header class="top-header">
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Admin</p>
+                </div>
+
+                <div class="admin-profile">
+                    Admin
+                </div>
+
+            </header>
+
+
+            <!-- Statistics -->
+
+<section class="stats-container">
+
+    <div class="stat-card">
+
+        <h3>Total Employees</h3>
+
+        <p id="totalEmployees">
+            0
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <h3>Departments</h3>
+
+        <p id="totalDepartments">
+            0
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <h3>Pending Leaves</h3>
+
+        <p id="pendingLeaves">
+            0
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <h3>Approved Leaves</h3>
+
+        <p id="approvedLeaves">
+            0
+        </p>
+
+    </div>
+
+</section>
+
+
+            <!-- Recent Activity -->
+
+            <section class="dashboard-section">
+
+    <h2>Recent Leave Requests</h2>
+
+    <div id="recentLeaves">
+
+    </div>
+
+</section>
+
+
+<section class="dashboard-section dashboard-announcements">
+
+    <h2>Latest Announcements</h2>
+
+    <div id="recentAnnouncements">
+
+    </div>
+
+</section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
